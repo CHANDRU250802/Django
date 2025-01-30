@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' with title="IPHONE 15 Pro" %}
+
+<body>
+<div class="product">
+    <div class="container-product">
+        <div class="image-section">
+            <img id="mainImage" src="{% static 'asserts/81dT7CUY6GL.jpg'%}" alt="iPhone">
+        </div>
+        <div class="info-section">
+            <h1>APPLE IPHONE 15 Pro</h1>
+            <div class="price">
+                ₹1,44,900
+            </div>
+            <div class="offer">
+                Inclusive of all taxes
+            </div>
+            <div class="specs">
+                <span>EMI starts at ₹2,860. No Cost EMI available</span>
+                <span>Cashback up to ₹1,769.97</span>
+                <span>7 days Service Centre Replacement</span>
+            </div>
+            <div class="color-size-section">
+                <div>
+                    <strong>Colour:</strong> Natural Titanium
+                </div>
+                <div class="options" id="colorOptions">
+                    <div class="option selected" data-color="Black Titanium">Black Titanium</div>
+                    <div class="option" data-color="Blue Titanium">Blue Titanium</div>
+                    <div class="option" data-color="Natural Titanium">Natural Titanium</div>
+                    <div class="option" data-color="White Titanium">White Titanium</div>
+                </div>
+                <div>
+                    <strong>Size:</strong> 128 GB
+                </div>
+                <div class="options" id="sizeOptions">
+                    <div class="option selected" data-size="128">128 GB</div>
+                    <div class="option" data-size="256">256 GB</div>
+                    <div class="option" data-size="512">512 GB</div>
+                </div>
+            </div>
+            <div class="buy-section">
+                <a href="#" class="cart-button">Add to cart</a>
+                <a href="../payment.html" class="buy-now-button">Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const colorOptions = document.querySelectorAll('#colorOptions .option');
+        const sizeOptions = document.querySelectorAll('#sizeOptions .option');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#colorOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#sizeOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        
+    </script>
+    <div>
+</body>
+</html>

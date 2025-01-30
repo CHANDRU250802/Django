@@ -1,0 +1,64 @@
+/* Basic Styling for Login and Sign Up Pages */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 320px;  /* Reduced max-width for a smaller container */
+    width: 100%;
+    padding: 20px;     /* Reduced padding for smaller spacing */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 8px;   /* Reduced padding for form fields */
+    font-size: 14px; /* Slightly smaller font size */
+    margin-bottom: 15px; /* Reduced margin */
+    width: 100%;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 8px;   /* Reduced padding for the button */
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.mt-3 {
+    text-align: center;
+}
+
+.mt-3 a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.mt-3 a:hover {
+    text-decoration: underline;
+}

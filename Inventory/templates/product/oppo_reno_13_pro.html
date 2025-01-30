@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' with title="OPPO RENO 12 PRO" %}
+
+<body>
+<div class="product">
+    <div class="container-product">
+        <div class="image-section">
+            <img id="mainImage" src="{% static 'asserts/opporeno13Pro.webp' %}" alt="opporeno13Pro">
+        </div>
+        <div class="info-section">
+            <h1>OPPO RENO 12 PRO</h1>
+            <div class="price">
+                ₹40,999
+            </div>
+            <div class="offer">
+                Inclusive of all taxes
+            </div>
+            <div class="specs">
+                <span>EMI starts at ₹2,860. No Cost EMI available</span>
+                <span>Cashback up to ₹1,769.97</span>
+                <span>7 days Service Centre Replacement</span>
+            </div>
+            <div class="color-size-section">
+                <div>
+                    <strong>Colour:</strong> Space Brown
+                </div>
+                <div class="options" id="colorOptions">
+                    <div class="option selected" data-color="space brown">Space Brown</div>
+                    <div class="option" data-color="sunset gold">Sunset Gold</div>
+                </div>
+                <div>
+                    <strong>Size:</strong> 128 GB
+                </div>
+                <div class="options" id="sizeOptions">
+                    <div class="option selected" data-size="128">128 GB</div>
+                    <div class="option" data-size="256">256 GB</div>
+                    <div class="option" data-size="512">512 GB</div>
+                </div>
+            </div>
+            <div class="buy-section">
+                <a href="#" class="cart-button">Add to cart</a>
+                <a href="../payment.html" class="buy-now-button">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const colorOptions = document.querySelectorAll('#colorOptions .option');
+        const sizeOptions = document.querySelectorAll('#sizeOptions .option');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#colorOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#sizeOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

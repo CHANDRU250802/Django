@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' with title="SAMSUNG GALAXY S24 ULTRA" %}
+
+<body>
+<div class="product">
+    <div class="container-product">
+        <div class="image-section">
+            <img id="mainImage" src="{% static 'asserts/s24.jpg' %}" alt="s24">
+        </div>
+        <div class="info-section">
+            <h1>SAMSUNG GALAXY S24 ULTRA</h1>
+            <div class="price">
+                ₹99,999
+            </div>
+            <div class="offer">
+                Inclusive of all taxes
+            </div>
+            <div class="specs">
+                <span>EMI starts at ₹2,860. No Cost EMI available</span>
+                <span>Cashback up to ₹1,769.97</span>
+                <span>7 days Service Centre Replacement</span>
+            </div>
+            <div class="color-size-section">
+                <div>
+                    <strong>Colour:</strong> Arctic Dawn
+                </div>
+                <div class="options" id="colorOptions">
+                    <div class="option selected" data-color="arctic dawn">Arctic Dawn</div>
+                    <div class="option" data-color="black eclipse">Black Eclipse</div>
+                    <div class="option" data-color="midnight ocean">Midnight Ocean</div>
+                </div>
+                <div>
+                    <strong>Size:</strong> 128 GB
+                </div>
+                <div class="options" id="sizeOptions">
+                    <div class="option selected" data-size="128">128 GB</div>
+                    <div class="option" data-size="256">256 GB</div>
+                    <div class="option" data-size="512">512 GB</div>
+                </div>
+            </div>
+            <div class="buy-section">
+                <a href="#" class="cart-button">Add to cart</a>
+                <a href="../payment.html" class="buy-now-button">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const colorOptions = document.querySelectorAll('#colorOptions .option');
+        const sizeOptions = document.querySelectorAll('#sizeOptions .option');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#colorOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#sizeOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

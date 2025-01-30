@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' with title="OPPO F27 Pro+ 5G" %}
+
+<body>
+<div class = product>
+    <div class="container-product">
+        <div class="image-section">
+            <img id="mainImage" src="{%static 'asserts/OPPO_F27_Pro+_5G.jpg' %}" alt="OPPO_F27_Pro">
+        </div>
+        <div class="info-section">
+            <h1>OPPO F27 Pro+ 5G</h1>
+            <div class="price">
+                ₹25,999
+            </div>
+            <div class="offer">
+                Inclusive of all taxes
+            </div>
+            <div class="specs">
+                <span>EMI starts at ₹2,860. No Cost EMI available</span>
+                <span>Cashback up to ₹1,769.97</span>
+                <span>7 days Service Centre Replacement</span>
+            </div>
+            <div class="color-size-section">
+                <div>
+                    <strong>Colour:</strong> Midnight Navy
+                </div>
+                <div class="options" id="colorOptions">
+                    <div class="option selected" data-color="Midnight Navy">Midnight Navy</div>
+                    <div class="option" data-color="dusk pink">Dusk Pink</div>
+                </div>
+                <div>
+                    <strong>Size:</strong> 128 GB
+                </div>
+                <div class="options" id="sizeOptions">
+                    <div class="option selected" data-size="128">128 GB</div>
+                    <div class="option" data-size="256">256 GB</div>
+                </div>
+            </div>
+            <div class="buy-section">
+                <a href="#" class="cart-button">Add to cart</a>
+                <a href="../payment.html" class="buy-now-button">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const colorOptions = document.querySelectorAll('#colorOptions .option');
+        const sizeOptions = document.querySelectorAll('#sizeOptions .option');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+            });
+        });
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#colorOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('#sizeOptions .selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
