@@ -60,7 +60,7 @@ def product_detail(request, product_name):
     return render(request, template_path)
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'login.html' )
 
 def signup(request):
     return render(request, 'signup.html')

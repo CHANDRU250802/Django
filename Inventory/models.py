@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 class Seller(models.Model):
     company_name = models.CharField(max_length=255)
@@ -14,5 +15,4 @@ class Seller(models.Model):
     flat = models.CharField(max_length=255)
     pin_code = models.CharField(max_length=10)
     category = models.CharField(max_length=100)
-
 
